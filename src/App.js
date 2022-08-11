@@ -11,7 +11,15 @@ import './App.css';
 
 function App() {
   // Variable que almacena los registros agregados al formulario
-  const [campos, setCampos] = useState({});
+  const [campos, setCampos] = useState({
+    foto: {},
+    nombres: '',
+    apellidos: '',
+    contacto: [],
+    documentos: [],
+    experiencia_laboral: [],
+    formacion_academica: [],
+  });
   // Variables bandera para alternar entre vistas
   const [verWeb, setVerWeb] = useState(false);
   const [verPdf, setVerPdf] = useState(false);
