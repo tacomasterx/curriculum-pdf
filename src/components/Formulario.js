@@ -49,7 +49,7 @@ function Formulario(props) {
                 accept="image/*"
                 onChange={(event) => {
                   let filename = fileSelectHandler(event);
-                  setFieldValue("foto", filename);
+                  setFieldValue("foto", URL.createObjectURL( filename ));
                 }}
               />
             </div>

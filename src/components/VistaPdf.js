@@ -1,9 +1,17 @@
-import {Document, Page, Text} from '@react-pdf/renderer';
+import {Document, Page, Text, Image} from '@react-pdf/renderer';
 
 const VistaPdf = ({campos}) => {
+  const styles = {
+    image:{
+      maxWidth: "120px",
+      maxHeight: "180px",
+    }
+  }
+
   return (
     <Document>
       <Page size="A4">
+        <Image src={campos.foto} alt="" style={styles.image} />
         <Text>
           {campos.nombres != null ?
             campos.nombres :

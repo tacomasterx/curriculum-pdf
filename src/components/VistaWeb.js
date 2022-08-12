@@ -1,7 +1,14 @@
 const VistaWeb = ({campos}) => {
+  const styles = {
+    image:{
+      maxWidth: "120px",
+      maxHeight: "180px",
+    }
+  }
+
   return (
     <div>
-      <img src="" />
+      <img src={campos.foto} alt="" style={styles.image} />
       <p>{campos.nombres != null ?
         campos.nombres :
         'No se han ingresado datos.'}</p>
