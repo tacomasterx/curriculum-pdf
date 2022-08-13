@@ -1,5 +1,9 @@
+// Formik es la biblioteca utilizada para implementar formularios.
 import {Formik, Form, Field} from 'formik';
 import {Button} from 'react-bootstrap';
+// Componente creado para los campos de texto simple del formulario.
+import Input from './Input';
+// import TextArea from './TextArea';
 
 const fileSelectHandler = (event) => {
   console.log(event.target.files[0]);
@@ -15,10 +19,10 @@ function Formulario(props) {
       errors.nombres = 'Campo obligatorio.';
     }
 
-    if (Object.keys(errors).length === 0) {
+    // if (Object.keys(errors).length === 0) {
       props.setCampos(values);
-      console.log(values);
-    }
+    // }
+    //
     return errors;
   }
 
@@ -49,13 +53,12 @@ function Formulario(props) {
                 accept="image/*"
                 onChange={(event) => {
                   let filename = fileSelectHandler(event);
-                  setFieldValue("foto", URL.createObjectURL( filename ));
+                  setFieldValue("foto", URL.createObjectURL(filename));
                 }}
               />
             </div>
             <div>
-              <label htmlFor="nombres">Nombres:</label>
-              <Field name="nombres" />
+              <Input name="nombres" label="Nombres:" />
             </div>
             <div>
               <label htmlFor="apellidos">Apellidos:</label>
